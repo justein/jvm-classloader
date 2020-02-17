@@ -3,6 +3,7 @@ package com.jhhg.nova.classloader;
 import sun.security.krb5.internal.PAData;
 
 import java.io.*;
+import java.lang.reflect.Proxy;
 
 /***
  * @ClassName: MyClassLoader
@@ -84,7 +85,6 @@ public class MyClassLoader extends ClassLoader {
         InputStream inputStream = null;
         ByteArrayOutputStream byteArrayOutputStream = null;
         packageAndClassName = packageAndClassName.replace(".","/");
-
         try {
             inputStream = new FileInputStream(new File(classPath+packageAndClassName+FILE_EXT));
             /**忘记初始化了，妈蛋*/
